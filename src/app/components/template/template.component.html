@@ -86,29 +86,44 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">Sexo</label>
     <div class="col-md-8">
-      <label class="custom-control custom-radio">
+      <label *ngFor="let s of sexos" class="custom-control custom-radio">
         <input 
         [(ngModel)]="usuario.sexo" 
         id="radio1" 
         name="sexo"
-        value="hombre" 
+        [value]="s"
         type="radio" 
         class="custom-control-input">
         <span class="custom-control-indicator"></span>
-        <span class="custom-control-description"> Hombre</span>
+        <span class="custom-control-description"> {{s}} </span>
       </label>
-      <label class="custom-control custom-radio">
+      <!-- <label class="custom-control custom-radio">
         <input 
         [(ngModel)]="usuario.sexo" 
         id="radio2" 
         name="sexo"
-        value="mujer" 
+        value="Mujer" 
         type="radio" 
         class="custom-control-input">
         <span class="custom-control-indicator"></span>
         <span class="custom-control-description"> Mujer</span>
-      </label>
+      </label> -->
     </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Acepta</label>
+    <div class="col-md-8">
+      <label class="custom-control custom-checkbox">
+        <input [(ngModel)]="usuario.acepta"
+        name="acepta"
+        type="checkbox" 
+        class="custom-control-input"
+        required >
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description"> Acepta las condiciones </span>
+      </label>
+      </div>
   </div>
 
   <div class="form-group row">

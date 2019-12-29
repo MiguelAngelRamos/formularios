@@ -16,7 +16,8 @@ export class TemplateComponent {
     apellido: null,
     correo: null,
     pais: "",
-    sexo: "hombre"
+    sexo: "Hombre",
+    acepta:false
   }
 
   paises = [
@@ -40,8 +41,9 @@ export class TemplateComponent {
       codigo: "CO",
       nombre: "Colombia"
     }
-
   ]
+
+  sexos:string[]=["Hombre", "Mujer"];
   constructor() { }
 
   guardar(forma: NgForm) {
